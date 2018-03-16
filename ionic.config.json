@@ -1,0 +1,8 @@
+{
+  "name": "youranxue_app",
+  "app_id": "1399e5a8",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
