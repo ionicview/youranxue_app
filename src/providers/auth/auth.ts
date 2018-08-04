@@ -11,7 +11,6 @@ import {SERVER_URL} from "../../config";
 export class AuthProvider {1
 
   authUser = new ReplaySubject<any>(1);
-
   constructor(private readonly http: Http,
               private readonly authHttp: AuthHttp,
               private readonly storage: Storage,
