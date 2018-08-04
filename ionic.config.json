@@ -1,14 +1,14 @@
 {
   "name": "youranxue_app",
-  "app_id": "1399e5a8",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   },
+  "type": "ionic-angular",
   "proxies": [
     {
       "path": "/youranxue",
       "proxyUrl": "http://localhost:8080"
     }
-  ]
+  ],
+  "pro_id": "1399e5a8"
 }
