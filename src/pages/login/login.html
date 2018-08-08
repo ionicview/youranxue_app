@@ -35,7 +35,7 @@
 
             <ion-item>
               <ion-label color="primary">用户名:</ion-label>
-              <ion-input [(ngModel)]="form.firstname" type="text" name="username" required #username="ngModel"  [class.invalid]="username.errors && username.dirty"></ion-input>
+              <ion-input [(ngModel)]="form.firstname" type="text" name="username" value="username" required #username="ngModel"  [class.invalid]="username.errors && username.dirty"></ion-input>
             </ion-item>
             <ion-item class="error-message" *ngIf="username.errors?.required && username.dirty">
               请输入用户名

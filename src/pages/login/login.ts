@@ -32,8 +32,8 @@ export class Login {
   ) {
     this.username = 'admin';
     this.password = 'admin';
-//this.registerCredentials.userId = "wg";
-//this.registerCredentials.password= "wg";
+    this.registerCredentials.userId = "admin";
+    this.registerCredentials.password= "admin";
 }
 
   ionViewDidLoad() {
