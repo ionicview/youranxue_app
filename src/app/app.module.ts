@@ -45,7 +45,7 @@ import { QuestionService } from '../service/QuestionService';
 import { MyBooksService } from '../service/MyBooksService';
 
 import { AuthProvider } from "../providers/auth/auth";
-import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig ,JwtHelper} from
+import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig, JwtHelper } from
   'angular2-jwt/angular2-jwt';
 import { ExaminePage } from '../pages/examine/examine';
 

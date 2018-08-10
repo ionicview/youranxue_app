@@ -7,12 +7,21 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title >学校考试</ion-title>
+    <ion-title>学校考试</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <ng-katex [equation]="equation" [options]="options"></ng-katex>
+<ion-content>
+  <ion-item-group>
+    <ion-item-divider color="light">初三上学期数学</ion-item-divider>
+    <ion-item>上学期期中测验</ion-item>
+    <ion-item>上学期期末测验</ion-item>
+  </ion-item-group>
+  <ion-item-group>
+    <ion-item-divider color="light">初三下学期数学</ion-item-divider>
+    <ion-item>下学期期中测验</ion-item>
+    <ion-item>下学期期末测验</ion-item>
+  </ion-item-group>
 </ion-content>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
-import { KatexOptions } from '../../../node_modules/ng-katex';
+import { KatexOptions } from 'ng-katex';
+import { ExamineGroupVO } from '../../model/examine/examine.group.vo';
 /**
  * Generated class for the ExaminePage page.
  *
@@ -16,6 +17,8 @@ import { KatexOptions } from '../../../node_modules/ng-katex';
 })
 export class ExaminePage {
 
+  examineGroupList: Array<ExamineGroupVO>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -27,4 +30,7 @@ export class ExaminePage {
   options: KatexOptions = {
     displayMode: true,
   };
+
+
+
 }

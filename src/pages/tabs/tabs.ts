@@ -1,4 +1,4 @@
-import { ExaminePage } from './../examine/examine';
+import { ExaminePage } from '../examine/examine';
 import { Component } from '@angular/core';
 
 import { ProfilePage } from '../profile/profile';

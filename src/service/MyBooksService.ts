@@ -1,6 +1,6 @@
 import {Injectable,Inject} from '@angular/core';
 import {Http,Headers,RequestOptions} from '@angular/http';
-import 'rxjs/Rx';
+import 'rxjs';
 import {Observable} from 'rxjs/Observable';
 import {SERVER_URL} from "../config";
 
