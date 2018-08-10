@@ -7,6 +7,8 @@ import {HomePage} from '../pages/home/home';
 //import { TabsPage } from '../pages/tabs/tabs';
 //import { Start } from '../pages/start/start';
 import { Login } from '../pages/login/login';
+import { ExaminePage } from '../pages/examine/examine';
+import { TabsPage } from '../pages/tabs/tabs';
 @Component({
   templateUrl: 'app.html'
 })
@@ -24,13 +26,13 @@ export class MyApp {
 
     authProvider.authUser.subscribe(jwt => {
       if (jwt) {
-        this.rootPage = HomePage;
+        this.rootPage = TabsPage;
       }
       else {
         this.rootPage = Login;
       }
     });
-    //this.rootPage = Login;
-    authProvider.checkLogin();
+    this.rootPage = TabsPage;
+    //authProvider.checkLogin();
   }
 }

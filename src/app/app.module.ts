@@ -16,7 +16,7 @@ import { Diagnosis } from '../pages/diagnosis/diagnosis';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Http, HttpModule, RequestOptions } from '@angular/http';
-
+import { KatexModule } from 'ng-katex';
 
 import { ChoiceQuestions } from '../pages/choice-questions/choice-questions';
 import { Test } from '../pages/test/test';
@@ -47,6 +47,7 @@ import { MyBooksService } from '../service/MyBooksService';
 import { AuthProvider } from "../providers/auth/auth";
 import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig ,JwtHelper} from
   'angular2-jwt/angular2-jwt';
+import { ExaminePage } from '../pages/examine/examine';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig ,JwtHelper} from
     Answer,
     Hint,
     TabsPage,
+    ExaminePage,
     MathJaxDirective
   ],
   imports: [
@@ -85,7 +87,8 @@ import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig ,JwtHelper} from
       name: 'myapp',
       driverOrder: ['sqlite', 'indexeddb', 'websql']
     }),
-    CustomFormsModule
+    CustomFormsModule,
+    KatexModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -113,7 +116,8 @@ import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig ,JwtHelper} from
     ChapterList,
     Answer,
     Hint,
-    TabsPage
+    TabsPage,
+    ExaminePage
   ],
   providers: [
     StatusBar,

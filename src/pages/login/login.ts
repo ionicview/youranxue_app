@@ -22,7 +22,7 @@ export class Login {
   password:string;
   loading: Loading;
   message: string;
-  registerCredentials = { userId: '', password: '' };
+  registerCredentials = { userId: 'admin', password: 'admin' };
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private auth: AuthService,private alertCtrl: AlertController, 

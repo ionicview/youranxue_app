@@ -1,3 +1,4 @@
+import { ExaminePage } from './../examine/examine';
 import { Component } from '@angular/core';
 
 import { ProfilePage } from '../profile/profile';
@@ -8,7 +9,7 @@ import { HomePage } from '../home/home';
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-
+  examineRoot = ExaminePage;
   tab1Root = HomePage;
   tab2Root = ProfilePage;
 
