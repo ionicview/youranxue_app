@@ -1,3 +1,5 @@
+import { TestService } from './../service/test.service';
+import { ViewExaminePage } from './../pages/view-examine/view-examine';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -79,6 +81,7 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     Hint,
     TabsPage,
     ExaminePage,
+    ViewExaminePage,
     MathJaxDirective
   ],
   imports: [
@@ -120,7 +123,8 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     Answer,
     Hint,
     TabsPage,
-    ExaminePage
+    ExaminePage,
+    ViewExaminePage
   ],
   providers: [
     StatusBar,
@@ -130,6 +134,7 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     AuthProvider,
     AuthService,
     ExamineService,
+    TestService,
     AUTH_PROVIDERS,
     JwtHelper,
     { provide: ErrorHandler, useClass: IonicErrorHandler },

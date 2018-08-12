@@ -5,6 +5,8 @@ import { TabsPage } from '../tabs/tabs';
 import { KatexOptions } from 'ng-katex';
 import { ExamineGroupVO } from '../../components/model/examine/examine.group.vo';
 import { ExamineVO } from '../../components/model/examine/examine.vo';
+import { ExamineViewPage } from '../examine-view/examine-view';
+import { ViewExaminePage } from '../view-examine/view-examine';
 
 /**
  * Generated class for the ExaminePage page.
@@ -44,6 +46,9 @@ export class ExaminePage {
   viewMyExamine(examine: ExamineVO){
      console.log("ID"+examine.examineId);
      console.log("Name"+examine.examineName);
+     this.navCtrl.push(ViewExaminePage, {
+       examine: examine
+     });
   }
 
 
