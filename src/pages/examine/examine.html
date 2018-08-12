@@ -14,14 +14,18 @@
 
 
 <ion-content>
-  <ion-item-group>
-    <ion-item-divider color="light">初三上学期数学</ion-item-divider>
-    <ion-item>上学期期中测验</ion-item>
-    <ion-item>上学期期末测验</ion-item>
+  <ion-item-group *ngFor="let examineGroup of examineGroupList; let i = index">
+
+    <ion-item-divider color="light" >
+      <ion-thumbnail item-start width="10" height="10">
+            <img src="../../assets/imgs/thumbnail-totoro.png" width="10" height="10"  >
+      </ion-thumbnail>
+      {{examineGroup.examineGroupName}}
+    </ion-item-divider>
+    <ion-item *ngFor="let examine of examineGroup.examineList;let i = index" (click)="viewMyExamine(examine)">{{examine.examineName}} </ion-item>
+    <!-- <ion-item>{{examine.examineName}}</ion-item> -->
   </ion-item-group>
-  <ion-item-group>
-    <ion-item-divider color="light">初三下学期数学</ion-item-divider>
-    <ion-item>下学期期中测验</ion-item>
-    <ion-item>下学期期末测验</ion-item>
-  </ion-item-group>
+
+  <ng-katex [equation]="equation" [options]="options"></ng-katex>
+
 </ion-content>

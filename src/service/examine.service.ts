@@ -1,29 +1,27 @@
-import {Injectable,Inject} from '@angular/core';
-import {Http,Headers,RequestOptions} from '@angular/http';
+import { Injectable, Inject } from '@angular/core';
+import { Http, Headers, RequestOptions } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs';
-import {Observable} from 'rxjs/Observable';
-import {SERVER_URL} from "../config";
+import { Observable } from 'rxjs/Observable';
+import { SERVER_URL } from "../config";
+import { ExamineGroupVO } from '../components/model/examine/examine.group.vo';
+
+
 
 @Injectable()
-export class ExamineService{
-  http:any;
-  bookUrl:String;
-  allBooks:any;
-  books1:any;
-  data:any;
-  img1:string;
-  imgbookUrl:String;
-  constructor(http:Http){
-  
+export class ExamineService {
+  //http:any;
+  bookUrl: String;
+  allExamines: Array<ExamineGroupVO>;
+
+  constructor(private httpClient: HttpClient) {
+
   }
 
-   getAllBooks(){
-    var response = this.http.get(`${SERVER_URL}/books/myBooks`).subscribe(
-      data=> this.allBooks = data,
-      err=>console.log(err),
-      ()=> console.log('Request Complete')
-    );
-    return  this.allBooks ;
+  public getExamines(): Observable<ExamineGroupVO[]> {
+
+    return this.httpClient.get<ExamineGroupVO[]>(`${SERVER_URL}/examine/getAllExamines`);
+
   }
 
 }

@@ -48,6 +48,8 @@ import { AuthProvider } from "../providers/auth/auth";
 import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig, JwtHelper } from
   'angular2-jwt/angular2-jwt';
 import { ExaminePage } from '../pages/examine/examine';
+import { ExamineService } from '../service/examine.service';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -82,6 +84,7 @@ import { ExaminePage } from '../pages/examine/examine';
   imports: [
     BrowserModule,
     HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot({
       name: 'myapp',
@@ -126,6 +129,7 @@ import { ExaminePage } from '../pages/examine/examine';
     MyBooksService,
     AuthProvider,
     AuthService,
+    ExamineService,
     AUTH_PROVIDERS,
     JwtHelper,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
