@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
  * Components.
  */
 @Component({
-  selector: 'you-img',
+  selector: 'mdb-you-img',
   templateUrl: 'you-img.html'
 })
 

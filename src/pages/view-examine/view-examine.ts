@@ -4,6 +4,7 @@ import { QuestionTestVO } from '../../components/model/question/question.test.vo
 import { QuestionChoiceVO } from '../../components/model/question/question.choice.vo';
 import { KatexOptions } from '../../../node_modules/ng-katex';
 import { ExamineVO } from '../../components/model/examine/examine.vo';
+import { TestService } from '../../service/test.service';
 
 /**
  * Generated class for the ViewExaminePage page.
@@ -30,17 +31,21 @@ export class ViewExaminePage {
   options: KatexOptions = {
     displayMode: false,
   };
-  
+
   testid: number;
   examine: ExamineVO;
-  testService: any;
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private testService: TestService) {
     this.examine = navParams.get('examine');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ViewExaminePage');
+    this.testService.getAllTestQuestionsByTestId(this.examine.examineId).subscribe((questions: QuestionTestVO) => {
+      // 选择题
+      this.choiceList = questions.choiceList;
+
+      console.log(this.choiceList.length);
+    });
   }
 
 }

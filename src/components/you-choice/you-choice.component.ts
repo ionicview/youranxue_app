@@ -7,8 +7,9 @@ import { QuestionChoiceOptionVO } from '../model/question/question.choice.option
 @Component({
   selector: 'mdb-you-choice',
   templateUrl: './you-choice.component.html',
-  styleUrls: ['./you-choice.component.scss'],
+
 })
+
 export class YouChoiceComponent implements OnInit {
   @Input() choiceQuestionList: Array<QuestionChoiceVO>;
 

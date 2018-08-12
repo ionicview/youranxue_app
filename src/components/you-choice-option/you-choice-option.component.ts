@@ -5,7 +5,7 @@ import { QuestionChoiceOptionVO } from '../model/question/question.choice.option
 @Component({
   selector: 'mdb-you-choice-option',
   templateUrl: './you-choice-option.component.html',
-  styleUrls: ['./you-choice-option.component.scss']
+
 })
 export class YouChoiceOptionComponent implements OnInit {
 

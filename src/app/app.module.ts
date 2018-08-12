@@ -1,6 +1,7 @@
+import { ComponentsModule } from './../components/components.module';
 import { TestService } from './../service/test.service';
 import { ViewExaminePage } from './../pages/view-examine/view-examine';
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -52,6 +53,12 @@ import { AuthHttp, AUTH_PROVIDERS, provideAuth, AuthConfig, JwtHelper } from
 import { ExaminePage } from '../pages/examine/examine';
 import { ExamineService } from '../service/examine.service';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { YouChoiceComponent } from '../components/you-choice/you-choice.component';
+import { YouChoiceOptionComponent } from '../components/you-choice-option/you-choice-option.component';
+import { YouChoiceOptionlistComponent } from '../components/you-choice-optionlist/you-choice-optionlist.component';
+import { YouImgComponent } from '../components/you-img/you-img';
+import { YouKatexComponent } from '../components/you-katex/you-katex';
+import { TttComponent } from '../components/ttt/ttt';
 
 @NgModule({
   declarations: [
@@ -82,7 +89,13 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     TabsPage,
     ExaminePage,
     ViewExaminePage,
-    MathJaxDirective
+    MathJaxDirective,
+    YouChoiceComponent,
+     YouChoiceOptionComponent,
+    YouChoiceOptionlistComponent,
+    YouImgComponent,
+    YouKatexComponent,
+    TttComponent,
   ],
   imports: [
     BrowserModule,
@@ -93,8 +106,8 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
       name: 'myapp',
       driverOrder: ['sqlite', 'indexeddb', 'websql']
     }),
-    CustomFormsModule,
-    KatexModule
+    
+    KatexModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -124,7 +137,13 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     Hint,
     TabsPage,
     ExaminePage,
-    ViewExaminePage
+    ViewExaminePage,
+     YouChoiceComponent,
+     YouChoiceOptionComponent,
+    YouChoiceOptionlistComponent,
+    YouImgComponent,
+    YouKatexComponent,
+    TttComponent,
   ],
   providers: [
     StatusBar,
@@ -138,7 +157,6 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     AUTH_PROVIDERS,
     JwtHelper,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-  ]
-
+  ],
 })
 export class AppModule { }

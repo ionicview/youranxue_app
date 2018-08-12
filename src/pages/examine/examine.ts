@@ -5,7 +5,6 @@ import { TabsPage } from '../tabs/tabs';
 import { KatexOptions } from 'ng-katex';
 import { ExamineGroupVO } from '../../components/model/examine/examine.group.vo';
 import { ExamineVO } from '../../components/model/examine/examine.vo';
-import { ExamineViewPage } from '../examine-view/examine-view';
 import { ViewExaminePage } from '../view-examine/view-examine';
 
 /**
