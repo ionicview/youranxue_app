@@ -5,7 +5,6 @@ import { YouChoiceComponent } from './you-choice/you-choice.component';
 import { YouChoiceOptionComponent } from './you-choice-option/you-choice-option.component';
 import { YouChoiceOptionlistComponent } from './you-choice-optionlist/you-choice-optionlist.component';
 import { YouKatexComponent } from './you-katex/you-katex';
-import { TttComponent } from './ttt/ttt';
 import { IonicModule } from '../../node_modules/ionic-angular/umd';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { IonicModule } from '../../node_modules/ionic-angular/umd';
     YouChoiceOptionlistComponent,
     YouImgComponent,
     YouKatexComponent,
-    TttComponent,
     ],
     imports: [IonicModule],
 	exports: [
@@ -24,7 +22,6 @@ import { IonicModule } from '../../node_modules/ionic-angular/umd';
     YouChoiceOptionlistComponent,
     YouImgComponent,
     YouKatexComponent,
-    TttComponent,
     ],
 })
 export class ComponentsModule {}

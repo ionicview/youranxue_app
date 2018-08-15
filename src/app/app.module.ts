@@ -58,7 +58,8 @@ import { YouChoiceOptionComponent } from '../components/you-choice-option/you-ch
 import { YouChoiceOptionlistComponent } from '../components/you-choice-optionlist/you-choice-optionlist.component';
 import { YouImgComponent } from '../components/you-img/you-img';
 import { YouKatexComponent } from '../components/you-katex/you-katex';
-import { TttComponent } from '../components/ttt/ttt';
+import { TransCourseStatus } from '../components/enum/trans.course.status';
+import { TransChoiceOption } from '../components/enum/trans.choice.option';
 
 @NgModule({
   declarations: [
@@ -91,11 +92,12 @@ import { TttComponent } from '../components/ttt/ttt';
     ViewExaminePage,
     MathJaxDirective,
     YouChoiceComponent,
-     YouChoiceOptionComponent,
+    YouChoiceOptionComponent,
     YouChoiceOptionlistComponent,
     YouImgComponent,
     YouKatexComponent,
-    TttComponent,
+    TransChoiceOption,
+    TransCourseStatus
   ],
   imports: [
     BrowserModule,
@@ -143,7 +145,6 @@ import { TttComponent } from '../components/ttt/ttt';
     YouChoiceOptionlistComponent,
     YouImgComponent,
     YouKatexComponent,
-    TttComponent,
   ],
   providers: [
     StatusBar,
