@@ -1,21 +1,12 @@
 <div *ngFor="let shortAnswerQuestion of shortAnswerQuestionList; let idxShortAnswer = index">
-  <div *ngFor="let questionSection of shortAnswerQuestion.shortAnswerContent; let idxSection = index" class="d-inline-flex">
-    <mdb-you-katex [latex]="questionSection"></mdb-you-katex>
-      <mdb-you-img [src]="questionSection.questionImg"></mdb-you-img>
-    <div *ngIf="idxSection < fillblankQuestion.blankCount">
-      <input type="text" [value]="fillblankQuestion.blankList[idxSection].yourAnswer" [disabled]="fillblankQuestion.blankList[idxSection].readOnlyMode">
-    </div>
-    <!--   idxSection {{fillblankQuestion.blankList[idxSection].yourAnswer}}-->
+  <!-- 问答题题干 -->
+  <mdb-you-katex [latex]="shortAnswerQuestion.shortAnswerContent"></mdb-you-katex>
+  <!-- 问答题题干图片 -->
+  <mdb-you-img [imgList]="shortAnswerQuestion.images"></mdb-you-img>
+
+  <!-- 问答题小题 -->
+  <div *ngFor="let subQuestionSection of shortAnswerQuestion.subQuestionList; let idxSubQuestion = index">
+    <mdb-you-katex [latex]="subQuestionSection.shortAnswerContent"></mdb-you-katex>
+    <mdb-you-img [imgList]="subQuestionSection.images"></mdb-you-img>
   </div>
-
-  <!-- <div>
-      <mdb-you-katex [latex]="fillblankQuestion.question"></mdb-you-katex>
-  </div> -->
-
-
-
-  <!-- <button type="button" class="close" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button> -->
-
 </div>

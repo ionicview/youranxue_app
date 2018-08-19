@@ -40,15 +40,20 @@ export class YouImgComponent implements OnInit {
 
     if (!CollectionUtils.isEmpty(this.imgList)) {
       this.imgList.forEach(img => {
-        this.imgSrcList.push(img);
+        this.imgSrcList.push(this.convertToURI(img));
       });
     }
   }
 
   convertToURI(imgPath: string): string {
 
+    console.log("Before Covert Image Path:"+imgPath);
     if (!imgPath.startsWith('http')) {
-      return environment.apiUrl.concat('/').concat(imgPath);
+      var afterPath: string;
+      afterPath = environment.apiUrl.concat('/').concat(imgPath);
+      console.log("After Covert Image Path:"+afterPath);
+
+      return afterPath;
     }
 
     return imgPath;

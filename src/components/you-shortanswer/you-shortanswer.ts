@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { QuestionShortAnswerVO } from '../model/question/question.short.answer.vo';
 
 /**
  * Generated class for the YouShortanswerComponent component.
@@ -13,7 +14,7 @@ import { Component } from '@angular/core';
 export class YouShortanswerComponent {
 
   text: string;
-
+  @Input() shortAnswerQuestionList: QuestionShortAnswerVO;
   constructor() {
     console.log('Hello YouShortanswerComponent Component');
     this.text = 'Hello World';

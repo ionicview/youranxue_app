@@ -1,3 +1,4 @@
+import { JsonUtils } from './../../utils/JsonUtils';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { QuestionTestVO } from '../../components/model/question/question.test.vo';
@@ -6,6 +7,7 @@ import { KatexOptions } from '../../../node_modules/ng-katex';
 import { ExamineVO } from '../../components/model/examine/examine.vo';
 import { TestService } from '../../service/test.service';
 import { QuestionFillBlankVO } from '../../components/model/question/question.fillblank.vo';
+import { QuestionShortAnswerVO } from '../../components/model/question/question.short.answer.vo';
 
 /**
  * Generated class for the ViewExaminePage page.
@@ -32,6 +34,8 @@ export class ViewExaminePage {
 
   fillblankList: Array<QuestionFillBlankVO>;
 
+  shortAnswerQuestionList: Array<QuestionShortAnswerVO>;
+
   options: KatexOptions = {
     displayMode: false,
   };
@@ -50,6 +54,7 @@ export class ViewExaminePage {
     this.testService.getAllTestQuestionsByTestId(this.examine.examineId).subscribe((questions: QuestionTestVO) => {
       // 选择题
       this.choiceList = questions.choiceList;
+
       questions.fillblankList.forEach((fillBlank: QuestionFillBlankVO) => {
         // 将从服务器端接收到的数据，变换为画面端Object
         // QuestionFillBlankVO的构造函数会将接收到题目转换为画面可显示结构
@@ -57,7 +62,10 @@ export class ViewExaminePage {
         const fillBlankVO = new QuestionFillBlankVO(fillBlank.fillblankId, fillBlank.question, fillBlank.blankList, fillBlank.imgList);
         this.fillblankList.push(fillBlankVO);
       });
-      console.log("Fill Blank Length:"+this.fillblankList.length);
+
+      this.shortAnswerQuestionList = questions.shortAnswerList;
+      
+      console.log("Fill Blank Length:" + this.fillblankList.length);
     });
   }
 

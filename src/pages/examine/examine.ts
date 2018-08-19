@@ -1,3 +1,4 @@
+import { JsonUtils } from './../../utils/JsonUtils';
 import { ExamineService } from '../../service/examine.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -28,12 +29,9 @@ export class ExaminePage {
 
   ionViewDidLoad() {
     this.examineGroupList = [];
-    this.examineService.getExamines().subscribe((allExamines: Array<ExamineGroupVO>) => {
 
-      allExamines.forEach(examine => {
-        const examineGroupVO = new ExamineGroupVO(examine.examineGroupId, examine.examineGroupName, examine.examineList);
-        this.examineGroupList.push(examineGroupVO);
-      });
+    this.examineService.getExamines().subscribe((allExamines) => {
+      this.examineGroupList = JsonUtils.parse(allExamines);
     });
   }
 
@@ -42,12 +40,12 @@ export class ExaminePage {
     displayMode: true,
   };
 
-  viewMyExamine(examine: ExamineVO){
-     console.log("ID"+examine.examineId);
-     console.log("Name"+examine.examineName);
-     this.navCtrl.push(ViewExaminePage, {
-       examine: examine
-     });
+  viewMyExamine(examine: ExamineVO) {
+    console.log("ID" + examine.examineId);
+    console.log("Name" + examine.examineName);
+    this.navCtrl.push(ViewExaminePage, {
+      examine: examine
+    });
   }
 
 
