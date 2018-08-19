@@ -3,10 +3,15 @@ import { Component, Input, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 
 /**
- * Generated class for the YouImgComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
+ * 图片显示模块.
+ * 可传入单个图片或者图片列表
+ * 两个都传的情况下，先显示单个图片，再显示图片列表
+ * 
+ * @input
+ *    src:单个图片
+ *    imgList:图片列表
+ * @output
+ *    无
  */
 @Component({
   selector: 'mdb-you-img',
@@ -27,11 +32,10 @@ export class YouImgComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.src = this.convertToURI(this.src);
 
     this.imgSrcList = [];
     if (this.src) {
-      this.imgSrcList.push(this.src);
+      this.imgSrcList.push(this.convertToURI(this.src));
     }
 
     if (!CollectionUtils.isEmpty(this.imgList)) {
@@ -39,15 +43,9 @@ export class YouImgComponent implements OnInit {
         this.imgSrcList.push(img);
       });
     }
-
-
-
-
-
   }
 
   convertToURI(imgPath: string): string {
-
 
     if (!imgPath.startsWith('http')) {
       return environment.apiUrl.concat('/').concat(imgPath);
