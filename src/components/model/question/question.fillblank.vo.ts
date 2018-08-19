@@ -1,3 +1,4 @@
+import { QuestionAnswerVO } from './question.answer.vo';
 import { QuestionFillBlankBlankVO } from './question.fillblank.blank.vo';
 
 export class QuestionFillBlankVO {
@@ -10,6 +11,8 @@ export class QuestionFillBlankVO {
     questionSections: Array<string>;
     imgList: Array<string>;
     blankList: Array<QuestionFillBlankBlankVO>;
+    answer: QuestionAnswerVO;
+    rightAnswer: QuestionAnswerVO;
 
     constructor(fillblankId: number, question: string, blankList: Array<QuestionFillBlankBlankVO>, imgList: Array<string>) {
 

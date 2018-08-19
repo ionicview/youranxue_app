@@ -1,3 +1,4 @@
+import { YouFillblankComponent } from './../components/you-fillblank/you-fillblank.component';
 import { ComponentsModule } from './../components/components.module';
 import { TestService } from './../service/test.service';
 import { ViewExaminePage } from './../pages/view-examine/view-examine';
@@ -60,6 +61,7 @@ import { YouImgComponent } from '../components/you-img/you-img';
 import { YouKatexComponent } from '../components/you-katex/you-katex';
 import { TransCourseStatus } from '../components/enum/trans.course.status';
 import { TransChoiceOption } from '../components/enum/trans.choice.option';
+import { YouShortanswerComponent } from '../components/you-shortanswer/you-shortanswer';
 
 @NgModule({
   declarations: [
@@ -91,11 +93,15 @@ import { TransChoiceOption } from '../components/enum/trans.choice.option';
     ExaminePage,
     ViewExaminePage,
     MathJaxDirective,
+
     YouChoiceComponent,
     YouChoiceOptionComponent,
     YouChoiceOptionlistComponent,
+    YouFillblankComponent,
     YouImgComponent,
     YouKatexComponent,
+    YouShortanswerComponent,
+
     TransChoiceOption,
     TransCourseStatus
   ],
@@ -108,7 +114,7 @@ import { TransChoiceOption } from '../components/enum/trans.choice.option';
       name: 'myapp',
       driverOrder: ['sqlite', 'indexeddb', 'websql']
     }),
-    
+
     KatexModule,
   ],
   bootstrap: [IonicApp],
@@ -140,11 +146,12 @@ import { TransChoiceOption } from '../components/enum/trans.choice.option';
     TabsPage,
     ExaminePage,
     ViewExaminePage,
-     YouChoiceComponent,
-     YouChoiceOptionComponent,
+    YouChoiceComponent,
+    YouChoiceOptionComponent,
     YouChoiceOptionlistComponent,
     YouImgComponent,
     YouKatexComponent,
+    YouShortanswerComponent,
   ],
   providers: [
     StatusBar,

@@ -1,3 +1,4 @@
+import { CollectionUtils } from './../../utils/CollectionUtils';
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 
@@ -17,18 +18,42 @@ export class YouImgComponent implements OnInit {
   text: string;
 
 
-    @Input() src: string;
-  
-  
-    constructor() {
+  @Input() src: string;
+  @Input() imgList: Array<string>;
+
+  imgSrcList: Array<string>;
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+    this.src = this.convertToURI(this.src);
+
+    this.imgSrcList = [];
+    if (this.src) {
+      this.imgSrcList.push(this.src);
     }
-  
-    ngOnInit(): void {
-      if (!this.src.startsWith('http')) {
-  
-        this.src = environment.apiUrl.concat('/').concat(this.src);
-        console.log("SRC:" + this.src);
-      }
+
+    if (!CollectionUtils.isEmpty(this.imgList)) {
+      this.imgList.forEach(img => {
+        this.imgSrcList.push(img);
+      });
     }
+
+
+
+
+
+  }
+
+  convertToURI(imgPath: string): string {
+
+
+    if (!imgPath.startsWith('http')) {
+      return environment.apiUrl.concat('/').concat(imgPath);
+    }
+
+    return imgPath;
+  }
 
 }
