@@ -1,12 +1,12 @@
-<div *ngFor="let shortAnswerQuestion of shortAnswerQuestionList; let idxShortAnswer = index">
+<ion-slide  style='text-align:left;'    *ngFor="let shortAnswerQuestion of shortAnswerQuestionList; let idxShortAnswer = index">
   <!-- 问答题题干 -->
-  <mdb-you-katex [latex]="shortAnswerQuestion.shortAnswerContent"></mdb-you-katex>
+  <mdb-you-katex style='text-align:left;'  [latex]="shortAnswerQuestion.shortAnswerContent"></mdb-you-katex>
   <!-- 问答题题干图片 -->
-  <mdb-you-img [imgList]="shortAnswerQuestion.images"></mdb-you-img>
+  <mdb-you-img   [imgList]="shortAnswerQuestion.images"></mdb-you-img>
 
   <!-- 问答题小题 -->
-  <div *ngFor="let subQuestionSection of shortAnswerQuestion.subQuestionList; let idxSubQuestion = index">
-    <mdb-you-katex [latex]="subQuestionSection.shortAnswerContent"></mdb-you-katex>
-    <mdb-you-img [imgList]="subQuestionSection.images"></mdb-you-img>
+  <div  style='text-align:left;' *ngFor="let subQuestionSection of shortAnswerQuestion.subQuestionList; let idxSubQuestion = index">
+    <mdb-you-katex style='text-align:left;' [latex]="subQuestionSection.shortAnswerContent"></mdb-you-katex>
+    <mdb-you-img  [imgList]="subQuestionSection.images"></mdb-you-img>
   </div>
-</div>
+</ion-slide>
