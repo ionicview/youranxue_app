@@ -1,3 +1,4 @@
+import { AbilityAnalysisPage } from './../ability-analysis/ability-analysis';
 import { ExaminePage } from '../examine/examine';
 import { Component } from '@angular/core';
 
@@ -12,7 +13,7 @@ export class TabsPage {
   examineRoot = ExaminePage;
   tab1Root = HomePage;
   tab2Root = ProfilePage;
-
+  radarRoot = AbilityAnalysisPage;
   constructor() {
 
   }

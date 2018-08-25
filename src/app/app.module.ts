@@ -1,4 +1,3 @@
-import { ComponentsModule } from './../components/components.module';
 import { TestService } from './../service/test.service';
 import { ViewExaminePage } from './../pages/view-examine/view-examine';
 import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -60,6 +59,8 @@ import { YouImgComponent } from '../components/you-img/you-img';
 import { YouKatexComponent } from '../components/you-katex/you-katex';
 import { TransCourseStatus } from '../components/enum/trans.course.status';
 import { TransChoiceOption } from '../components/enum/trans.choice.option';
+import { AbilityAnalysisPage } from '../pages/ability-analysis/ability-analysis';
+import { EchartsNg2Module } from 'echarts-ng2';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { TransChoiceOption } from '../components/enum/trans.choice.option';
     TabsPage,
     ExaminePage,
     ViewExaminePage,
+    AbilityAnalysisPage,
     MathJaxDirective,
     YouChoiceComponent,
     YouChoiceOptionComponent,
@@ -101,6 +103,7 @@ import { TransChoiceOption } from '../components/enum/trans.choice.option';
   ],
   imports: [
     BrowserModule,
+    EchartsNg2Module,
     HttpModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
@@ -140,8 +143,9 @@ import { TransChoiceOption } from '../components/enum/trans.choice.option';
     TabsPage,
     ExaminePage,
     ViewExaminePage,
-     YouChoiceComponent,
-     YouChoiceOptionComponent,
+    AbilityAnalysisPage,
+    YouChoiceComponent,
+    YouChoiceOptionComponent,
     YouChoiceOptionlistComponent,
     YouImgComponent,
     YouKatexComponent,
