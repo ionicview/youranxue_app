@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-=======
-import { MyAnswersheetPage } from './../pages/my-answersheet/my-answersheet';
-import { YouFillblankComponent } from './../components/you-fillblank/you-fillblank.component';
 import { ComponentsModule } from './../components/components.module';
->>>>>>> 0a483f7c53b7f704be2d0b68cce9b9a4bc66c789
 import { TestService } from './../service/test.service';
 import { ViewExaminePage } from './../pages/view-examine/view-examine';
 import { NgModule, ErrorHandler, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -68,6 +63,8 @@ import { TransChoiceOption } from '../components/enum/trans.choice.option';
 import { AbilityAnalysisPage } from '../pages/ability-analysis/ability-analysis';
 import { EchartsNg2Module } from 'echarts-ng2';
 import { YouShortanswerComponent } from '../components/you-shortanswer/you-shortanswer';
+import { MyAnswersheetPage } from '../pages/my-answersheet/my-answersheet';
+import { YouFillblankComponent } from '../components/you-fillblank/you-fillblank.component';
 
 @NgModule({
   declarations: [
