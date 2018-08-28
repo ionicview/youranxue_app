@@ -16,6 +16,10 @@ export class YouChoiceComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+  }
+  ionViewDidLoad() {
+    console.log(this.choiceQuestionList);
   }
 
   optionSelected(selectedOption: QuestionChoiceOptionVO) {

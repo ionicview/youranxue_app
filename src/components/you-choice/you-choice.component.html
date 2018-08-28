@@ -1,10 +1,10 @@
 <div *ngFor="let choiceQuestion of choiceQuestionList; let myIndex = index">
+  <ion-slide style='align-items: flex-start;display: flex;justify-content: left;'>
 
     <mdb-you-katex [latex]="choiceQuestion.question"></mdb-you-katex>
     <div *ngFor="let questionImg of choiceQuestion.imgList; let myIndex = index">
       <mdb-you-img [src]="questionImg"></mdb-you-img>
     </div>
-    <mdb-you-choice-optionlist [choiceOptionList]="choiceQuestion.choiceOptionList" (onOptionSelected)="optionSelected($event)"></mdb-you-choice-optionlist>
-  
-  
-  </div>
+    <mdb-you-choice-optionlist style='text-align:left;' [choiceOptionList]="choiceQuestion.choiceOptionList" (onOptionSelected)="optionSelected($event)"></mdb-you-choice-optionlist>
+  </ion-slide>
+</div>

@@ -1,19 +1,84 @@
-<!--
-  Generated template for the ViewExaminePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-      <ion-title>{{examine.examineName}}</ion-title>
+<ion-header >
+  <ion-navbar color="primary">
+    <ion-title style='height:15px;'>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div style='padding-top:5px;font-size:20px;text-align:center'> {{examine.examineName}}</div>
+          </ion-col>
+          <ion-col>
+            <div item-right style='padding-top:5px;font-size:20px;text-align:center'>10/20</div>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-only style='text-align:right' (click)="presentPopover($event)">
+              <ion-icon name="more"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-    <h5 class="card-header primary-color white-text">一、选择题：本大题共12小题，每小题5分，共60分，在每小题给出的四个选项中，只有一项是满足题目要求的。</h5>
-    <mdb-you-choice [choiceQuestionList]="choiceList"></mdb-you-choice>
+  <!-- <h5 class="card-header primary-color white-text">一、选择题：本大题共12小题，每小题5分，共60分，在每小题给出的四个选项中，只有一项是满足题目要求的。</h5> -->
+  <ion-slides pager>
+    <!-- <mdb-you-choice [choiceQuestionList]="choiceList"></mdb-you-choice> -->
+
+    <!-- <h5 class="card-header primary-color white-text">二、填空题：本大题共4小题，每题5分，共20分.请将答案填在答题卡对应题号的位置上。</h5> -->
+    <!-- <mdb-you-fillblank [fillblankList]="fillblankList"></mdb-you-fillblank> -->
+
+    <!-- <h5 class="card-header primary-color white-text">三、解答题：本大题共6小题，共70分。解答应写出文字说明、证明过程或演算步骤。</h5> -->
+    <!-- <mdb-you-shortanswer [shortAnswerQuestionList]="shortAnswerQuestionList"></mdb-you-shortanswer> -->
+
+
+
+
+
+    <!-- -============================ -->
+    <ion-slide style='align-items: flex-start;display: flex;justify-content: left;' *ngFor="let choiceQuestion of choiceList; let myIndex = index">
+
+      <mdb-you-katex [latex]="choiceQuestion.question"></mdb-you-katex>
+      <div *ngFor="let questionImg of choiceQuestion.imgList; let myIndex = index">
+        <mdb-you-img [src]="questionImg"></mdb-you-img>
+      </div>
+      <mdb-you-choice-optionlist style='text-align:left;' [choiceOptionList]="choiceQuestion.choiceOptionList" (onOptionSelected)="optionSelected($event)"></mdb-you-choice-optionlist>
+    </ion-slide>
+
+    <ion-slide style='align-items: flex-start;display: flex;justify-content: left;' *ngFor="let fillblankQuestion of fillblankList; let idxFillblank = index">
+        <div style='text-align:left;' *ngFor="let questionSection of fillblankQuestion.questionSections; let idxSection = index"
+          class="d-inline-flex">
+          <mdb-you-katex [latex]="questionSection"></mdb-you-katex>
+          <div *ngIf="idxSection < fillblankQuestion.blankCount">
+            <input type="text" [value]="fillblankQuestion.blankList[idxSection].yourAnswer" [disabled]="fillblankQuestion.blankList[idxSection].readOnlyMode">
+          </div>
+          <!--   idxSection {{fillblankQuestion.blankList[idxSection].yourAnswer}}-->
+        </div>
+  
+        <!-- <div>
+                <mdb-you-katex [latex]="fillblankQuestion.question"></mdb-you-katex>
+            </div> -->
+  
+  
+  
+        <!-- <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+  
+      </ion-slide>
+    <ion-slide  style='align-items: flex-start;display: flex;justify-content: left;'  *ngFor="let shortAnswerQuestion of shortAnswerQuestionList; let idxShortAnswer = index">
+      <!-- 问答题题干 -->
+      <mdb-you-katex style='text-align:left;' [latex]="shortAnswerQuestion.shortAnswerContent"></mdb-you-katex>
+      <!-- 问答题题干图片 -->
+      <mdb-you-img [imgList]="shortAnswerQuestion.images"></mdb-you-img>
+
+      <!-- 问答题小题 -->
+      <div style='text-align:left;' *ngFor="let subQuestionSection of shortAnswerQuestion.subQuestionList; let idxSubQuestion = index">
+        <mdb-you-katex style='text-align:left;' [latex]="subQuestionSection.shortAnswerContent"></mdb-you-katex>
+        <mdb-you-img [imgList]="subQuestionSection.images"></mdb-you-img>
+      </div>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>

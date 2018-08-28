@@ -68,6 +68,9 @@ export class AbilityAnalysisPage {
 		}]
 	};
 
+	header = [
+		'成绩/知识','学生','班级','差值','全体','得分','满分'
+	];
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad AbilityAnalysisPage');

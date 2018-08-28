@@ -6,22 +6,25 @@ import { YouChoiceOptionComponent } from './you-choice-option/you-choice-option.
 import { YouChoiceOptionlistComponent } from './you-choice-optionlist/you-choice-optionlist.component';
 import { YouKatexComponent } from './you-katex/you-katex';
 import { IonicModule } from '../../node_modules/ionic-angular/umd';
+import { YouShortanswerComponent } from './you-shortanswer/you-shortanswer';
 
 @NgModule({
-	declarations: [
-    YouChoiceComponent,
-    YouChoiceOptionComponent,
-    YouChoiceOptionlistComponent,
-    YouImgComponent,
-    YouKatexComponent,
+    declarations: [
+        YouChoiceComponent,
+        YouChoiceOptionComponent,
+        YouChoiceOptionlistComponent,
+        YouImgComponent,
+        YouKatexComponent,
+        YouShortanswerComponent,
     ],
     imports: [IonicModule],
-	exports: [
-    YouChoiceComponent,
-    YouChoiceOptionComponent,
-    YouChoiceOptionlistComponent,
-    YouImgComponent,
-    YouKatexComponent,
+    exports: [
+        YouChoiceComponent,
+        YouChoiceOptionComponent,
+        YouChoiceOptionlistComponent,
+        YouImgComponent,
+        YouKatexComponent,
+        YouShortanswerComponent,
     ],
 })
-export class ComponentsModule {}
+export class ComponentsModule { }
