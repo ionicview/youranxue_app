@@ -2,7 +2,6 @@ import { JsonUtils } from './../../utils/JsonUtils';
 import { ExamineService } from '../../service/examine.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { TabsPage } from '../tabs/tabs';
 import { KatexOptions } from 'ng-katex';
 import { ExamineGroupVO } from '../../components/model/examine/examine.group.vo';
 import { ExamineVO } from '../../components/model/examine/examine.vo';
@@ -24,7 +23,10 @@ export class ExaminePage {
 
   examineGroupList: Array<ExamineGroupVO>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public examineService: ExamineService) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public examineService: ExamineService,
+  ) {
   }
 
   ionViewDidLoad() {
@@ -47,6 +49,7 @@ export class ExaminePage {
       examine: examine
     });
   }
+
 
 
 }

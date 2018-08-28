@@ -1,3 +1,4 @@
+import { MyAnswersheetPage } from './../pages/my-answersheet/my-answersheet';
 import { YouFillblankComponent } from './../components/you-fillblank/you-fillblank.component';
 import { ComponentsModule } from './../components/components.module';
 import { TestService } from './../service/test.service';
@@ -92,6 +93,7 @@ import { YouShortanswerComponent } from '../components/you-shortanswer/you-short
     TabsPage,
     ExaminePage,
     ViewExaminePage,
+    MyAnswersheetPage,
     MathJaxDirective,
 
     YouChoiceComponent,
@@ -146,6 +148,9 @@ import { YouShortanswerComponent } from '../components/you-shortanswer/you-short
     TabsPage,
     ExaminePage,
     ViewExaminePage,
+    MyAnswersheetPage,
+
+
     YouChoiceComponent,
     YouChoiceOptionComponent,
     YouChoiceOptionlistComponent,

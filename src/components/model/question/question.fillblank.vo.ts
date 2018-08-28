@@ -6,6 +6,7 @@ export class QuestionFillBlankVO {
     private BLANK_MARK_STR = '#BLANK#';
 
     fillblankId: number;
+    questionNo: number;
     question: string;
     blankCount: number;
     questionSections: Array<string>;

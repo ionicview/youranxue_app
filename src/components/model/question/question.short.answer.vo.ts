@@ -3,6 +3,7 @@ import { QuestionAnswerVO } from "./question.answer.vo";
 
 export class QuestionShortAnswerVO {
     shortAnswerId: number;
+    questionNo: number;
     shortAnswerContent: string;
     images: Array<string>;
     subQuestionList: Array<QuestionShortAnswerSubQuestionVO>;

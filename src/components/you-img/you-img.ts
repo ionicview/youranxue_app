@@ -47,11 +47,11 @@ export class YouImgComponent implements OnInit {
 
   convertToURI(imgPath: string): string {
 
-    console.log("Before Covert Image Path:"+imgPath);
+   // console.log("Before Covert Image Path:"+imgPath);
     if (!imgPath.startsWith('http')) {
       var afterPath: string;
       afterPath = environment.apiUrl.concat('/').concat(imgPath);
-      console.log("After Covert Image Path:"+afterPath);
+      //console.log("After Covert Image Path:"+afterPath);
 
       return afterPath;
     }

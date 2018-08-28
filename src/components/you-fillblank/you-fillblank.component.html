@@ -1,3 +1,4 @@
+
 <ion-slide  style='align-items: flex-start;display: flex;justify-content: left;' *ngFor="let fillblankQuestion of fillblankList; let idxFillblank = index" >
   <div style='text-align:left;'  *ngFor="let questionSection of fillblankQuestion.questionSections; let idxSection = index" class="d-inline-flex" >
     <mdb-you-katex [latex]="questionSection"></mdb-you-katex>
