@@ -1,7 +1,15 @@
 page-view-examine {
     .custom-popover {
         width: 320px;
-      }
+    }
 
+    .cell-prime {
+        background-color: #488aff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
 
 }
