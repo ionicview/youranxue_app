@@ -1,3 +1,4 @@
+import { KnowledgeViewPage } from './../pages/knowledge-view/knowledge-view';
 import { ComponentsModule } from './../components/components.module';
 import { TestService } from './../service/test.service';
 import { ViewExaminePage } from './../pages/view-examine/view-examine';
@@ -97,6 +98,8 @@ import { YouFillblankComponent } from '../components/you-fillblank/you-fillblank
     ViewExaminePage,
     AbilityAnalysisPage,
     MyAnswersheetPage,
+    KnowledgeViewPage,
+
     MathJaxDirective,
 
     YouChoiceComponent,
@@ -154,7 +157,7 @@ import { YouFillblankComponent } from '../components/you-fillblank/you-fillblank
     ViewExaminePage,
     AbilityAnalysisPage,
     MyAnswersheetPage,
-
+    KnowledgeViewPage,
 
     YouChoiceComponent,
     YouChoiceOptionComponent,

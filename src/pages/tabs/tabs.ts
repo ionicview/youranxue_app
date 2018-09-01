@@ -1,3 +1,4 @@
+import { KnowledgeViewPage } from './../knowledge-view/knowledge-view';
 import { AbilityAnalysisPage } from './../ability-analysis/ability-analysis';
 import { MyAnswersheetPage } from './../my-answersheet/my-answersheet';
 import { ExaminePage } from '../examine/examine';
@@ -15,6 +16,7 @@ export class TabsPage {
   tab2Root = ProfilePage;
   radarRoot = AbilityAnalysisPage;
   test = MyAnswersheetPage;
+  knowledgeRoot = KnowledgeViewPage;
   constructor() {
 
   }
