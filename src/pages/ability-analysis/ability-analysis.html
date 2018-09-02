@@ -15,64 +15,16 @@ ability-analysis
 </echarts-ng2>
 <div>
 	<div class="row header">
-		<div class="col">成绩/知识</div>
-		<div class="col">学生</div>
-		<div class="col">班级</div>
-		<div class="col">差值</div>
-		<div class="col">全体</div>
-		<div class="col">差值</div>
-		<div class="col">得分</div>
-		<div class="col">满分</div>
+		<div class="col" *ngFor="let element of tableData.header">
+			{{element}}
+		</div>
 	</div>
-	<div class="row" >
-		<div class="col">整数的认识</div>
-		<div class="col">95.7</div>
-		<div class="col">90</div>
-		<div class="col">5.1</div>
-		<div class="col">90.6</div>
-		<div class="col">5.1</div>
-		<div class="col">22</div>
-		<div class="col">23</div>
-	</div>
-	<div class="row" >
-		<div class="col">整数的运算</div>
-		<div class="col">95.7</div>
-		<div class="col">90</div>
-		<div class="col">5.1</div>
-		<div class="col">90.6</div>
-		<div class="col">5.1</div>
-		<div class="col">22</div>
-		<div class="col">23</div>
-	</div>
-	<div class="row" >
-		<div class="col">对称</div>
-		<div class="col">95.7</div>
-		<div class="col">90</div>
-		<div class="col">5.1</div>
-		<div class="col">90.6</div>
-		<div class="col">5.1</div>
-		<div class="col">22</div>
-		<div class="col">23</div>
-	</div>
-	<div class="row" >
-		<div class="col">平移与旋转</div>
-		<div class="col">95.7</div>
-		<div class="col">90</div>
-		<div class="col">5.1</div>
-		<div class="col">90.6</div>
-		<div class="col">5.1</div>
-		<div class="col">22</div>
-		<div class="col">23</div>
-	</div>
-	<div class="row" >
-		<div class="col">平面几何</div>
-		<div class="col">95.7</div>
-		<div class="col">90</div>
-		<div class="col">5.1</div>
-		<div class="col">90.6</div>
-		<div class="col">5.1</div>
-		<div class="col">22</div>
-		<div class="col">23</div>
+	<div class="row" *ngFor="let row of tableData.detail">
+		<div class="col">{{row.name}}</div>
+		<div class="col">{{row.student}}</div>
+		<div class="col">{{row.clazz}}</div>
+		<div class="col">{{row.all}}</div>
+		<div class="col">{{row.max}}</div>
 	</div>
 </div>
 </ion-content>
