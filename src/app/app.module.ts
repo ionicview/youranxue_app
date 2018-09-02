@@ -66,6 +66,7 @@ import { EchartsNg2Module } from 'echarts-ng2';
 import { YouShortanswerComponent } from '../components/you-shortanswer/you-shortanswer';
 import { MyAnswersheetPage } from '../pages/my-answersheet/my-answersheet';
 import { YouFillblankComponent } from '../components/you-fillblank/you-fillblank.component';
+import { AnalysisTestService } from '../service/Analysis.test';
 
 @NgModule({
   declarations: [
@@ -175,6 +176,7 @@ import { YouFillblankComponent } from '../components/you-fillblank/you-fillblank
     AuthService,
     ExamineService,
     TestService,
+    AnalysisTestService,
     AUTH_PROVIDERS,
     JwtHelper,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
