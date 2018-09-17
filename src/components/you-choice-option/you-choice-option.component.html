@@ -1,6 +1,6 @@
 <span class="">
-    <a class="btn-floating btn-sm  btn-outline-primary" ng-disabled="true">{{ choiceOption.sequenceNo | transChoiceOption}}.</a>
+        <button ion-button [class]="choiceOption.status" >{{ choiceOption.sequenceNo | transChoiceOption}}</button>
     &nbsp;<mdb-you-katex [latex]="choiceOption.choiceItem"></mdb-you-katex>
 </span>
 <!-- <div *ngFor="let optionImg of choiceOption.imgList; let myIndex = index" > -->
-  <mdb-you-img [imgList]="choiceOption.imgList"></mdb-you-img>
+<mdb-you-img [imgList]="choiceOption.imgList"></mdb-you-img>

@@ -14,6 +14,7 @@ export class YouChoiceOptionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.choiceOption.status = 'mySelectionIsWrong';
     //this.imgList = [{ 'http://cdn.shopify.com/s/files/1/0496/1029/files/Freesample.svg?5153'}];
 
    // this.imgList = ['image/imageDisplay/imgouter/No-image-available.jpg'];
