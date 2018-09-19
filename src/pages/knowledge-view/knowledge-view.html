@@ -5,36 +5,11 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>knowledge-view</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
-<ion-content padding>
-    <ion-grid>
-        <ion-row>
-          <ion-col>
-            1 of 2
-          </ion-col>
-          <ion-col>
-            2 of 2
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            1 of 3
-          </ion-col>
-          <ion-col>
-            2 of 3
-          </ion-col>
-          <ion-col>
-            3 of 3
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-<echarts-ng2 #echartsTreeMapTest="" [option]="optionTreeMapTest">
-</echarts-ng2>
+<ion-content>
+  <echarts-ng2 #echarts="" [option]="option">
+  </echarts-ng2>
 </ion-content>

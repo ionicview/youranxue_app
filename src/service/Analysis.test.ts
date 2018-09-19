@@ -14,18 +14,20 @@ import { RadarDataVO } from '../components/model/analysis/radar-data.vo';
 @Injectable()
 export class AnalysisTestService {
 
-    constructor(private http: HttpClient) {
+  constructor(private http: HttpClient) {
+  }
 
-    }
-
-    getTableDataMap(): Observable<RadarDataVO> {
-        return this.http.get<RadarDataVO>(`${environment.apiUrl}/ability-analysis/table-map/`);
-    }
-    getTableDataVO(): Observable<RadarDataVO> {
-        return this.http.get<RadarDataVO>(`${environment.apiUrl}/ability-analysis/table-vo/`);
-    }
-    getTableDataJson(): Observable<RadarDataVO> {
-        return this.http.get<RadarDataVO>(`${environment.apiUrl}/ability-analysis/table-json/`);
-    }
+  getTableDataMap(): Observable<RadarDataVO> {
+    return this.http.get<RadarDataVO>(`${environment.apiUrl}/ability-analysis/table-map/`);
+  }
+  getTableDataVO(): Observable<RadarDataVO> {
+    return this.http.get<RadarDataVO>(`${environment.apiUrl}/ability-analysis/table-vo/`);
+  }
+  getTableDataJson(): Observable<RadarDataVO> {
+    return this.http.get<RadarDataVO>(`${environment.apiUrl}/ability-analysis/table-json/`);
+  }
+  getRadarOption(): Observable<any> {
+      return this.http.get<RadarDataVO>(`${environment.apiUrl}/ability-analysis/radar-option/`);
+  }
 
 }
