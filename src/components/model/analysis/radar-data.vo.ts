@@ -9,3 +9,4 @@ export class RadarDataVO {
         this.detail = detail;
     }
 }
+
