@@ -3,14 +3,14 @@
     <ion-title color="primary">
       <ion-grid color="primary">
         <ion-row justify-content-center color="primary">
-          <ion-col style ="background-color:#488aff;border: 0px" align-self-center col-sm>
+          <ion-col style="background-color:#488aff;border: 0px" align-self-center col-sm>
             <div color="primary"> {{examine.examineName}}</div>
           </ion-col>
-          <ion-col style ="background-color:#488aff;border: 0px" align-self-center col-sm>
+          <ion-col style="background-color:#488aff;border: 0px" align-self-center col-sm>
             <div item-right>10/20</div>
           </ion-col>
-          <ion-col style ="background-color:#488aff ;border: 0px" align-self-center col-sm>
-            <button ion-button icon-only  (click)="presentPopover($event)">
+          <ion-col style="background-color:#488aff ;border: 0px" align-self-center col-sm>
+            <button ion-button icon-only (click)="presentPopover($event)">
               <ion-icon name="more"></ion-icon>
             </button>
           </ion-col>
@@ -22,30 +22,19 @@
 
 
 <ion-content padding>
-  <!-- <h5 class="card-header primary-color white-text">一、选择题：本大题共12小题，每小题5分，共60分，在每小题给出的四个选项中，只有一项是满足题目要求的。</h5> -->
   <ion-slides pager>
-    <!-- <mdb-you-choice [choiceQuestionList]="choiceList"></mdb-you-choice> -->
-
-    <!-- <h5 class="card-header primary-color white-text">二、填空题：本大题共4小题，每题5分，共20分.请将答案填在答题卡对应题号的位置上。</h5> -->
-    <!-- <mdb-you-fillblank [fillblankList]="fillblankList"></mdb-you-fillblank> -->
-
-    <!-- <h5 class="card-header primary-color white-text">三、解答题：本大题共6小题，共70分。解答应写出文字说明、证明过程或演算步骤。</h5> -->
-    <!-- <mdb-you-shortanswer [shortAnswerQuestionList]="shortAnswerQuestionList"></mdb-you-shortanswer> -->
-
-
-
-
-
-    <!-- -============================ -->
+    <!-- 选择题 -->
     <ion-slide style='align-items: flex-start;display: flex;justify-content: left;' *ngFor="let choiceQuestion of choiceList; let myIndex = index">
 
       <mdb-you-katex [latex]="choiceQuestion.question"></mdb-you-katex>
       <div *ngFor="let questionImg of choiceQuestion.imgList; let myIndex = index">
         <mdb-you-img [src]="questionImg"></mdb-you-img>
       </div>
-      <mdb-you-choice-optionlist style='text-align:left;' [choiceOptionList]="choiceQuestion.choiceOptionList" (onOptionSelected)="optionSelected($event)"></mdb-you-choice-optionlist>
+      <mdb-you-choice-optionlist style='text-align:left;' [choiceOptionList]="choiceQuestion.choiceOptionList"
+        (onOptionSelected)="optionSelected($event)"></mdb-you-choice-optionlist>
     </ion-slide>
 
+    <!-- 填空题 -->
     <ion-slide style='align-items: flex-start;display: flex;justify-content: left;' *ngFor="let fillblankQuestion of fillblankList; let idxFillblank = index">
       <div style='text-align:left;' *ngFor="let questionSection of fillblankQuestion.questionSections; let idxSection = index"
         class="d-inline-flex">
@@ -53,20 +42,11 @@
         <div *ngIf="idxSection < fillblankQuestion.blankCount">
           <input type="text" [value]="fillblankQuestion.blankList[idxSection].yourAnswer" [disabled]="fillblankQuestion.blankList[idxSection].readOnlyMode">
         </div>
-        <!--   idxSection {{fillblankQuestion.blankList[idxSection].yourAnswer}}-->
       </div>
 
-      <!-- <div>
-                <mdb-you-katex [latex]="fillblankQuestion.question"></mdb-you-katex>
-            </div> -->
-
-
-
-      <!-- <button type="button" class="close" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button> -->
-
     </ion-slide>
+
+    <!-- 问答题 -->
     <ion-slide style='align-items: flex-start;display: flex;justify-content: left;' *ngFor="let shortAnswerQuestion of shortAnswerQuestionList; let idxShortAnswer = index">
       <!-- 问答题题干 -->
       <mdb-you-katex style='text-align:left;' [latex]="shortAnswerQuestion.shortAnswerContent"></mdb-you-katex>

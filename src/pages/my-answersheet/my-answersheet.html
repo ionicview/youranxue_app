@@ -16,7 +16,7 @@
 <ion-content padding>
 
   <div style='font-size: 1em'>{{questionTest.choiceTitle}}</div>
-  <button ion-button [class]="'round-button'" [style.background-color]="'yellow'" *ngFor="let choiceAnswer of questionTest.choiceList"
+  <button ion-button [class]="'round-button'" [class]="(choiceAnswer.isMyAnswerRight == 'true') ? 'rightAnswer':'mySelectionIsWrong'" *ngFor="let choiceAnswer of questionTest.choiceList"
     (click)="close(choiceAnswer.questionIdx)" round>{{choiceAnswer.questionNo}}</button>
 
   <div style='font-size: 1em'>{{questionTest.fillblankTitle}}</div>
